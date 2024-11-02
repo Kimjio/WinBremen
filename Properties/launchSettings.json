@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinBremen (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinBremen (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
