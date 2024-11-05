@@ -32,7 +32,7 @@ namespace WinBremen
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         /// <summary>
