@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace WinBremen.Models.Nintendo.BaaS
 {
-    class LoginRequest
+    class FederationRequest
     {
         public string appVersion { get; set; } = "";
 
         public string assertion { get; set; }
 
+        public DeviceAccount deviceAccount { get; set; }
+
         public string deviceName { get; set; } = "";
+
+        public IdpAccount idpAccount { get; set; }
 
         public string locale { get; set; } = "";
 
@@ -27,6 +31,8 @@ namespace WinBremen.Models.Nintendo.BaaS
 
         public string osVersion { get; set; } = "";
 
+        public string previousUserId { get; set; }
+
         public string sessionId { get; set; }
 
         public string sdkVersion { get; set; } = "";
@@ -34,14 +40,14 @@ namespace WinBremen.Models.Nintendo.BaaS
         public string timeZone { get; set; } = "";
 
         public long timeZoneOffset { get; set; } = 0;
-        
+
         public enum NetworkType
-        { 
+        {
             wifi,
             wwan,
             unknown,
         }
-        
+
         public enum OSType
         {
             Android,

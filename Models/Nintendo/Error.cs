@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinBremen.Models.Nintendo.BaaS
+namespace WinBremen.Models.Nintendo
 {
-    internal class Error
+    class Error
     {
         public string type { get; set; }
 
