@@ -34,14 +34,14 @@ namespace WinBremen.Models.Nintendo.BaaS
         public string timeZone { get; set; } = "";
 
         public long timeZoneOffset { get; set; } = 0;
-        
+
         public enum NetworkType
-        { 
+        {
             wifi,
             wwan,
             unknown,
         }
-        
+
         public enum OSType
         {
             Android,
