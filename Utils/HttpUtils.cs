@@ -9,6 +9,8 @@ namespace WinBremen.Utils
 {
     class HttpUtils
     {
-        public static readonly HttpClient client = new();
+        public static readonly HttpClient client = new(new HttpClientHandler()
+            { AutomaticDecompression = System.Net.DecompressionMethods.GZip }
+        );
     }
 }

@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Nintendo Music</value>
+    <value>WinBremen</value>
   </data>
   <data name="TitleBar.Title" xml:space="preserve">
     <value>Music</value>
   </data>
   <data name="SignoutButton.Content" xml:space="preserve">
-    <value>로그아웃</value>
+    <value>Sign out</value>
   </data>
 </root>

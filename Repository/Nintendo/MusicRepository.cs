@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -25,6 +26,8 @@ namespace WinBremen.Repository.Nintendo
                 RequestUri = new Uri($"{BASE_URL}/rights/token"),
             };
             requestMessage.Headers.Authorization = new("Bearer", idToken);
+            // requestMessage.Headers.Add("x-platform", "Android");
+            // requestMessage.Headers.Add("x-productversion", "1.0.1");
 
             // content.Headers.Add("AppCheck", "");
             // content.Headers.Add("Authorization", $"Bearer {idToken}");

@@ -16,11 +16,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TitleBar
             x:Uid="TitleBar"
             x:Name="TitleBar"
+            Grid.Row="0" 
             Subtitle="Preview"
             Background="Transparent"
             IsBackButtonVisible="True"
@@ -28,21 +30,26 @@
             BackRequested="NavViewTitleBar_BackRequested"
             PaneToggleRequested="NavViewTitleBar_PaneToggleRequested">
             <TitleBar.IconSource>
-                <SymbolIconSource Symbol="Audio" />
+                <FontIconSource FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEC4F;" />
             </TitleBar.IconSource>
 
             <TitleBar.Footer>
-                <Button 
+                <Button
+                    x:Name="AccountButton"
                     Width="32"
-                        Height="32"
-                        Padding="0"
-                        BorderBrush="{ThemeResource CircleElevationBorderBrush}"
-                        CornerRadius="16">
+                    Height="32"
+                    Padding="0"
+                    BorderBrush="{ThemeResource CircleElevationBorderBrush}"
+                    CornerRadius="16"
+                    CenterPoint="16,16,0"
+                    PointerEntered="AccountButton_PointerEntered"
+                    PointerExited="AccountButton_PointerExited">
                     <Button.Content>
                         <PersonPicture
                             x:Name="AccountPicture"
+                            PointerPressed="AccountPicture_PointerPressed"
                             Width="32"
-                            Height="32" />
+                            Height="32"/>
                     </Button.Content>
                     <Button.Flyout>
                         <Flyout
@@ -86,13 +93,46 @@
             x:Name="NavigationView"
             IsPaneToggleButtonVisible="False"
             IsBackButtonVisible="Collapsed">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Icon="Home" />
+            </NavigationView.MenuItems>
+            
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="DebugText" Text="0" />
                 <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-                <MediaPlayerElement
-                    x:Name="mediaPlayer"
-                    AreTransportControlsEnabled="True">
-                </MediaPlayerElement>
+                <MediaPlayerElement Visibility="Visible" AreTransportControlsEnabled="True" x:Name="PlayerElement"/>
             </StackPanel>
         </NavigationView>
+
+        <StackPanel
+            Orientation="Vertical"
+            Grid.Row="2"
+                    Margin="16,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Text="1:45"
+                    VerticalAlignment="Center"
+                    TextLineBounds="TrimToCapHeight" />
+
+                <Slider 
+                    Grid.Column="1" 
+                    x:Name="PlayerSlider"
+                    ValueChanged="PlayerSlider_ValueChanged"
+                    Margin="16,0" />
+
+                <TextBlock
+                    Grid.Column="2"
+                    Text="2:37"
+                    VerticalAlignment="Center"
+                    TextLineBounds="TrimToCapHeight" />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
